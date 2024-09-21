@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## LavaLust 4.0
 <p align="center">
     <img width="200" height="300" src="https://raw.githubusercontent.com/ronmarasigan/LavaLust-Docs/master/assets/images/logo1.png">
@@ -42,3 +43,6 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 </p>
+=======
+# lavalust-user-management-system
+>>>>>>> dd03422b110f837486c523df0eabb62e1af36a6e
