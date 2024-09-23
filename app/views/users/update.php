@@ -19,12 +19,10 @@
     <div class="form-container">
         <h2 class="mb-4">Update User</h2>
 
-        <!-- Check for form submission errors -->
         <?php if (isset($error)): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
         <?php endif; ?>
 
-        <!-- Update Form -->
         <form action="/users/update/<?php echo $user['id']; ?>" method="POST" class="row g-3">
             <div class="col-md-6">
                 <label for="last_name" class="form-label">Last Name</label>

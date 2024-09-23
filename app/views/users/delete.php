@@ -33,7 +33,6 @@
                 <strong>Warning!</strong> Are you sure you want to delete the user <strong><?php echo htmlspecialchars($user['rrm_first_name'] . ' ' . $user['rrm_last_name']); ?></strong>?
             </div>
 
-            <!-- Button to open modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">
                 Delete
             </button>
@@ -46,7 +45,6 @@
     </div>
 </div>
 
-<!-- Modal -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -69,7 +67,6 @@
     </div>
 </div>
 
-<!-- Bootstrap and jQuery Scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

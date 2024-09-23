@@ -43,17 +43,17 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$router->get('/', 'Welcome::index');
+$router->get('/', 'User::read'); // It will Set User::read as the default route
 $router->get('/about-us', 'Welcome::about_us');
 $router->get('/contact-us', function() use ($router){
 echo 'OKAY LANG AKO' ;
+
+
 });
 
 $router->get('/users/display', 'User::read');
 $router->match('/users/create','User::create', array('GET', 'POST'));
 
-// Update User Route
 $router->match('/users/update/{id}', 'User::update', array('GET', 'POST'));
 
-// Delete User Route
 $router->get('/users/delete/{id}', 'User::delete');

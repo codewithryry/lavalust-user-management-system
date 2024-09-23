@@ -29,8 +29,8 @@
 <body>
     <div class="container-fluid">
         <div class="table-container">
-            <h4 class="text-right"><?= $name; ?></h4>
-
+        <h4 class="text-right" style="font-size: 2.0em;"><?= $name; ?></h4>
+            <br>
             <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 'true'): ?>
                 <div class="alert alert-success">Deleted successfully!</div>
             <?php endif; ?>
@@ -42,7 +42,7 @@
 
             <div class="search-create-row">
                 <div class="col-md-6">
-                    <a href="/users/create" class="btn btn-primary">Add New Data</a>
+                    <a href="/users/create" class="btn btn-primary">Create New Data</a>
                 </div>
             </div>
 
@@ -84,18 +84,17 @@
         </div>
     </div>
 
-    <!-- Bootstrap and DataTables JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-    <!-- Initialize DataTable with Pagination -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             $('#myTable').DataTable({
-                "pageLength": 5, // Set the number of rows to display per page
-                "lengthMenu": [5, 10, 25, 50] // Options for number of rows per page
+                "pageLength": 5, 
+                "lengthMenu": [5, 10, 25, 50] 
             });
         });
     </script>
