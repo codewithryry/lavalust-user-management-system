@@ -10,10 +10,6 @@
             background-color: #f8f9fa;
             padding: 20px;
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> dev-v4
     </style>
 </head>
 <body>
@@ -27,10 +23,6 @@
         <?php endif; ?>
 
         <form action="/users/update/<?php echo $user['id']; ?>" method="POST" class="row g-3">
-<<<<<<< HEAD
-=======
-
->>>>>>> dev-v4
             <div class="col-md-6">
                 <label for="last_name" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="last_name" name="last_name" value="<?php echo $user['rrm_last_name']; ?>" required>
@@ -39,8 +31,6 @@
                 <label for="first_name" class="form-label">First Name</label>
                 <input type="text" class="form-control" id="first_name" name="first_name" value="<?php echo $user['rrm_first_name']; ?>" required>
             </div>
-<<<<<<< HEAD
-=======
 
                        <!-- Username Field -->
                        <div class="col-md-6">
@@ -48,7 +38,6 @@
                 <input type="text" class="form-control" id="username" name="username" value="<?php echo $user['rrm_username']; ?>" required>
             </div>
 
->>>>>>> dev-v4
             <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="<?php echo $user['rrm_email']; ?>" required>
@@ -66,13 +55,10 @@
                 <textarea class="form-control" id="address" name="address" rows="3" required><?php echo $user['rrm_address']; ?></textarea>
             </div>
             <div class="col-12">
-<<<<<<< HEAD
-=======
                 <label for="password" class="form-label">Password (Optional)</label>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Leave blank if not changing">
             </div>
             <div class="col-12">
->>>>>>> dev-v4
                 <button type="submit" class="btn btn-primary">Update</button>
                 <a href="/users/display" class="btn btn-secondary">Cancel</a>
             </div>

@@ -29,25 +29,15 @@
 <body>
     <div class="container-fluid">
         <div class="table-container">
-<<<<<<< HEAD
-        <h4 class="text-right" style="font-size: 2.0em;"><?= $name; ?></h4>
-=======
             <h4 class="text-right" style="font-size: 2.0em;"><?= $name; ?></h4>
->>>>>>> dev-v4
             <br>
             <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 'true'): ?>
                 <div class="alert alert-success">Deleted successfully!</div>
             <?php endif; ?>
 
             <?php if (isset($_GET['updated']) && $_GET['updated'] == 'true'): ?>
-<<<<<<< HEAD
-    <div class="alert alert-success">Updated successfully!</div>
-<?php endif; ?>
-
-=======
                 <div class="alert alert-success">Updated successfully!</div>
             <?php endif; ?>
->>>>>>> dev-v4
 
             <div class="search-create-row">
                 <div class="col-md-6">
@@ -61,10 +51,7 @@
                         <th>ID</th>
                         <th>Last Name</th>
                         <th>First Name</th>
-<<<<<<< HEAD
-=======
                         <th>Username</th> <!-- Username column -->
->>>>>>> dev-v4
                         <th>Email</th>
                         <th>Gender</th>
                         <th>Address</th>
@@ -74,23 +61,11 @@
                 <tbody>
                     <?php if (empty($prod)): ?>
                         <tr>
-<<<<<<< HEAD
-                            <td colspan="7" class="text-center">No users found.</td>
-=======
                             <td colspan="8" class="text-center">No users found.</td>
->>>>>>> dev-v4
                         </tr>
                     <?php else: ?>
                         <?php foreach ($prod as $p): ?>
                             <tr>
-<<<<<<< HEAD
-                                <td><?= $p['id']; ?></td>
-                                <td><?= $p['rrm_last_name']; ?></td>
-                                <td><?= $p['rrm_first_name']; ?></td>
-                                <td><?= $p['rrm_email']; ?></td>
-                                <td><?= $p['rrm_gender']; ?></td>
-                                <td><?= $p['rrm_address']; ?></td>
-=======
                                 <td><?= htmlspecialchars($p['id']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_last_name']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_first_name']); ?></td>
@@ -98,7 +73,6 @@
                                 <td><?= htmlspecialchars($p['rrm_email']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_gender']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_address']); ?></td>
->>>>>>> dev-v4
                                 <td>
                                     <a href="/users/update/<?= $p['id']; ?>" class="btn btn-warning btn-sm">Update</a>
                                     <a href="/users/delete/<?= $p['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
@@ -116,10 +90,6 @@
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dev-v4
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             $('#myTable').DataTable({

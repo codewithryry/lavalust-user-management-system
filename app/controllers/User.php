@@ -5,17 +5,10 @@ class User extends Controller {
 
     public function read() {
         $this->call->model('user_model');
-<<<<<<< HEAD
-    
-        // Check if there is a search query
-        $query = isset($_GET['query']) ? $_GET['query'] : null;
-    
-=======
 
         // Check if there is a search query
         $query = isset($_GET['query']) ? $_GET['query'] : null;
 
->>>>>>> dev-v4
         if ($query) {
             // If there is a search query, fetch users based on it
             $data['prod'] = $this->user_model->searchUsers($query);
@@ -23,30 +16,12 @@ class User extends Controller {
             // If no search query, fetch all users
             $data['prod'] = $this->user_model->readUsers();
         }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> dev-v4
         $data['name'] = "User List";
         $this->call->view('users/display', $data);
     }
 
     public function create() {
         if ($this->form_validation->submitted()) {
-<<<<<<< HEAD
-            $rrm_last_name = $this->io->post('last_name');
-            $rrm_first_name = $this->io->post('first_name');
-            $rrm_email = $this->io->post('email');
-            $rrm_gender = $this->io->post('gender');
-            $rrm_address = $this->io->post('address');
-
-            $this->call->model('user_model');
-            $this->user_model->createUsers($rrm_last_name, $rrm_first_name, $rrm_email, $rrm_gender, $rrm_address);
-            // Redirect after creation with success message
-            header("Location: /users/display?added=true");
-            exit;
-=======
             // Capture input values
             $rrm_last_name = $this->io->post('last_name');
             $rrm_first_name = $this->io->post('first_name');
@@ -100,21 +75,10 @@ class User extends Controller {
                 error_log("User creation failed: " . $createResult['message']); // Log the error message
                 $data['errorMessage'] = $createResult['message']; // Display the error message
             }
->>>>>>> dev-v4
         }
         $this->call->view('users/create'); 
     }
 
-<<<<<<< HEAD
-    // Update User
-    public function update($id) {
-        $this->call->model('user_model'); // Load the model
-    
-        // Fetch user data if it's a GET request to pre-fill the form
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            $data['user'] = $this->user_model->getUserById($id); // Fetch user by ID
-    
-=======
     public function login() {
         $data = [];
 
@@ -175,59 +139,31 @@ class User extends Controller {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $data['user'] = $this->user_model->getUserById($id); // Fetch user by ID
 
->>>>>>> dev-v4
             // Check if user exists
             if (!$data['user']) {
                 // Handle user not found
                 header("Location: /users/display");
                 exit; // Redirect if user not found
             }
-<<<<<<< HEAD
-    
-            $data['name'] = "Update User";
-            $this->call->view('users/update', $data);
-        } else if ($this->form_validation->submitted()) { // If form is submitted
-=======
 
             $data['name'] = "Update User";
             $this->call->view('users/update', $data);
         } else if ($this->form_validation->submitted()) { // If form is submitted
             // Capture input values including username
             $rrm_username = $this->io->post('username');
->>>>>>> dev-v4
             $rrm_last_name = $this->io->post('last_name');
             $rrm_first_name = $this->io->post('first_name');
             $rrm_email = $this->io->post('email');
             $rrm_gender = $this->io->post('gender');
             $rrm_address = $this->io->post('address');
-<<<<<<< HEAD
-    
-            // Call the update method in user_model
-            $this->user_model->updateUsers($id, $rrm_last_name, $rrm_first_name, $rrm_email, $rrm_gender, $rrm_address);
-=======
 
             // Call the update method in user_model
             $this->user_model->updateUsers($id, $rrm_last_name, $rrm_first_name, $rrm_username, $rrm_email, $rrm_gender, $rrm_address);
->>>>>>> dev-v4
             // Redirect to the display page with a success message
             header("Location: /users/display?updated=true");
             exit;
         }
     }
-<<<<<<< HEAD
-    
-
-    // Delete User
-// In your delete method in the controller
-public function delete($id) {
-    $this->call->model('user_model');
-    $this->user_model->deleteUsers($id);
-    // Redirect to the read page after deletion
-    header("Location: /users/display?deleted=true");
-    exit;
-}
-
-=======
 
     // Delete User
     public function delete($id) {
@@ -237,7 +173,6 @@ public function delete($id) {
         header("Location: /users/display?deleted=true");
         exit;
     }
->>>>>>> dev-v4
 
     public function display() {
         $this->call->model('user_model'); // Load the model properly
@@ -274,10 +209,4 @@ public function delete($id) {
 
         $this->call->view('users/display', $data);
     }
-<<<<<<< HEAD
-
 }
-?>
-=======
-}
->>>>>>> dev-v4
