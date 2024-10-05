@@ -33,6 +33,10 @@
                 <strong>Warning!</strong> Are you sure you want to delete the user <strong><?php echo htmlspecialchars($user['rrm_first_name'] . ' ' . $user['rrm_last_name']); ?></strong>?
             </div>
 
+<<<<<<< HEAD
+=======
+            <!-- Button to open modal for delete confirmation -->
+>>>>>>> dev-v4
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal">
                 Delete
             </button>
@@ -45,6 +49,10 @@
     </div>
 </div>
 
+<<<<<<< HEAD
+=======
+<!-- Modal for delete confirmation -->
+>>>>>>> dev-v4
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -55,10 +63,23 @@
                 </button>
             </div>
             <div class="modal-body">
+<<<<<<< HEAD
                 Are you sure you want to delete the user <strong><?php echo isset($user) ? htmlspecialchars($user['rrm_first_name'] . ' ' . $user['rrm_last_name']) : 'the selected user'; ?></strong>?
             </div>
             <div class="modal-footer">
                 <form action="/users/delete/<?php echo isset($user) ? $user['id'] : ''; ?>" method="POST">
+=======
+                Are you sure you want to delete the user <strong><?php echo isset($user) ? htmlspecialchars($user['rrm_first_name'] . ' ' . $user['rrm_last_name']) : 'the selected user'; ?></strong>?<br><br>
+                
+                <!-- Password input for security -->
+                <form action="/users/delete/<?php echo isset($user) ? $user['id'] : ''; ?>" method="POST">
+                    <div class="form-group">
+                        <label for="password">Enter Password to Confirm:</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+            </div>
+            <div class="modal-footer">
+>>>>>>> dev-v4
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
