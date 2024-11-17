@@ -31,13 +31,13 @@
         <div class="table-container">
             <h4 class="text-right" style="font-size: 2.0em;"><?= $name; ?></h4>
             <br>
-            <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 'true'): ?>
+            <!-- <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 'true'): ?>
                 <div class="alert alert-success">Deleted successfully!</div>
             <?php endif; ?>
 
             <?php if (isset($_GET['updated']) && $_GET['updated'] == 'true'): ?>
                 <div class="alert alert-success">Updated successfully!</div>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
             <div class="search-create-row">
                 <div class="col-md-6">
@@ -48,7 +48,6 @@
             <table id="myTable" class="table table-bordered table-striped">
                 <thead class="table-light">
                     <tr>
-                        <th>ID</th>
                         <th>Last Name</th>
                         <th>First Name</th>
                         <th>Username</th> <!-- Username column -->
@@ -66,7 +65,6 @@
                     <?php else: ?>
                         <?php foreach ($prod as $p): ?>
                             <tr>
-                                <td><?= htmlspecialchars($p['id']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_last_name']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_first_name']); ?></td>
                                 <td><?= htmlspecialchars($p['rrm_username']); ?></td> <!-- Ensure username is displayed -->
