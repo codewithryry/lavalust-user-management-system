@@ -9,7 +9,7 @@ class User_model extends Model {
     }
 
     // Create a new user with details including username, email, and hashed password
-    public function createUsers($rrm_last_name, $rrm_first_name, $rrm_username, $rrm_email, $password, $rrm_gender, $rrm_address) {
+    public function createUsers($rrm_last_name, $rrm_first_name, $rrm_username, $rrm_email, $password) {
         // Hash the password for security
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
@@ -20,8 +20,6 @@ class User_model extends Model {
             'rrm_username'   => $rrm_username,
             'rrm_email'      => $rrm_email,
             'rrm_password'   => $hashed_password, // Add password field
-            'rrm_gender'     => $rrm_gender,
-            'rrm_address'    => $rrm_address
         );
         return $this->db->table('rrm_users')->insert($data);
     }
@@ -76,7 +74,7 @@ class User_model extends Model {
     }
 
     // Create a new user with credentials
-    public function createUserWithCredentials($rrm_username, $rrm_email, $rrm_password, $rrm_first_name, $rrm_last_name, $rrm_gender, $rrm_address) {
+    public function createUserWithCredentials($rrm_username, $rrm_email, $rrm_password, $rrm_first_name, $rrm_last_name) {
         // Check if the username or email already exists
         if ($this->db->table('rrm_users')->where('rrm_username', $rrm_username)->get()) {
             return ['success' => false, 'message' => 'Username already exists.'];
@@ -96,25 +94,18 @@ class User_model extends Model {
             'rrm_password'  => $hashed_password,
             'rrm_first_name' => $rrm_first_name,
             'rrm_last_name'  => $rrm_last_name,
-            'rrm_gender'     => $rrm_gender,
-            'rrm_address'    => $rrm_address,
         );
-    
-        // Insert the user into the database
-        if ($this->db->table('rrm_users')->insert($data)) {
-            return ['success' => true]; // Optionally, you can return the user_id if needed
+            if ($this->db->table('rrm_users')->insert($data)) {
+            return ['success' => true]; 
         } else {
             error_log('Database insert error: ' . print_r($this->db->getLastError(), true));
             return ['success' => false, 'message' => 'Error creating user.'];
         }
     }
     
-    // New method for user login
     public function loginUser($rrm_username, $password) {
-        // Validate user credentials
         $user = $this->validateUser($rrm_username, $password);
         if ($user) {
-            // Return user data upon successful login
             return ['success' => true, 'user' => $user];
         }
         return ['success' => false, 'message' => 'Invalid username or password.'];
