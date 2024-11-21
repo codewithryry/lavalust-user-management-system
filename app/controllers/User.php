@@ -37,7 +37,11 @@ class User extends Controller {
     
             if ($createResult['success']) {
                 // Redirect to login page after successful registration
+<<<<<<< HEAD
                 header("Location: /users/display?registered=true");
+=======
+                header("Location: /users/login?registered=true");
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea
                 exit;
             } else {
                 $data['errorMessage'] = $createResult['message']; 
@@ -63,7 +67,12 @@ class User extends Controller {
                 $_SESSION['email'] = $loginResult['user']['rrm_email']; // Store email in session
     
                 // Redirect to the send email form after successful login
+<<<<<<< HEAD
                 header("Location: /users/send_email");
+=======
+                // header("Location: /users/send_email");
+                header("Location: /users/display");
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea
                 exit;
             } else {
                 $data['errorMessage'] = $loginResult['message']; 
@@ -100,11 +109,19 @@ class User extends Controller {
 
         if ($this->email->send()) {
             // Email sent successfully
+<<<<<<< HEAD
             header("Location: /users/display?success=true");
         } else {
             // Email failed to send
             error_log('Email failed to send: ' . print_r($this->email->getErrors(), true));
             header("Location: /users/display?error=true");
+=======
+            header("Location: /users/send_email?success=true");
+        } else {
+            // Email failed to send
+            error_log('Email failed to send: ' . print_r($this->email->getErrors(), true));
+            header("Location: /users/send_email?error=true");
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea
         }
         exit;
     }

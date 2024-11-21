@@ -26,3 +26,10 @@ $router->post('/users/login', 'User::login');
 
 $router->match('/users/send_email', 'User::send_email', array('GET', 'POST')); // Route to display the send email form and handle submission
 $router->post('/users/send_email_action', 'User::send_email_action'); // Route to process the send email action
+<<<<<<< HEAD
+=======
+
+
+$router->match('/auth/reset_password', 'Auth::reset_password', array('GET', 'POST'));
+$router->match('/auth/reset_password_action/{id}', 'Auth::reset_password_action', array('GET', 'POST'));
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea

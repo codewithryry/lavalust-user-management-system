@@ -22,10 +22,13 @@
         .form-control {
             border-radius: 6px;
         }
+<<<<<<< HEAD
         #sentEmailsMessage {
             display: none;
             margin-top: 15px;
         }
+=======
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea
     </style>
 </head>
 <body>
@@ -50,6 +53,7 @@
                     <input type="file" class="form-control" id="attachment" name="attachment">
                 </div>
                 <button type="submit" class="btn btn-primary">Send Email</button>
+<<<<<<< HEAD
                 <button type="button" id="viewEmailsButton" class="btn btn-secondary ms-2">View Sent Emails</button>
             </form>
             <div id="sentEmailsMessage" class="alert alert-info">
@@ -74,6 +78,19 @@
                 });
             });
         });
+=======
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Check for query parameter 'success'
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('success') && urlParams.get('success') === 'true') {
+            alert('Email sent successfully!');
+        }
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea
     </script>
 </body>
 </html>

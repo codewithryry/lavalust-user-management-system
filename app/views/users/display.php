@@ -47,6 +47,17 @@
         <div class="table-container">
             <h4 class="text-right" style="font-size: 2.0em;">User Management</h4>
             <br>
+<<<<<<< HEAD
+=======
+            <!-- <?php if (isset($_GET['deleted']) && $_GET['deleted'] == 'true'): ?>
+                <div class="alert alert-success">Deleted successfully!</div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['updated']) && $_GET['updated'] == 'true'): ?>
+                <div class="alert alert-success">Updated successfully!</div>
+            <?php endif; ?> -->
+
+>>>>>>> 13cd77ddc9ff41c3efe2173f3aaaae3c35372bea
             <div class="search-create-row">
                 <div class="col-md-6">
                     <button class="btn btn-primary" id="createUserBtn">Create New Data</button>
